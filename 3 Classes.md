@@ -21,4 +21,28 @@
 		Rectangle.cpp which we include rectangle.hh in and define the implementations. functions etc.
 
 ### Operators:
-	- 
+	- You can overload a variety of operators.
+
+## Templates, namespaces
+### Templates
+	- This is one of the advanced and very important topics in C++ and OOP
+	- Standard Template Language: allows the user to define an object with a specific type and this was not possible before
+	- STL, Standard Template Library was developed using templates, double ended queue deque
+	- In this lesson we will write the vecotr using linked lists as its internal data structure
+		- #include <vector>
+		std::vector<int or T> myvector;
+template class c_vector<int>;
+template class c_vector<std::string>;
+These two are used to instantiate the needed types in the case of the templated classes as the linked does not find the implementation of the class methods which results in linking error, so there are two ways of solving this issue:
+	- implement the methods in the same header file
+	- instantiate the using the weird syntax above for each type.
+	- (not recommended but I like it) preprocessor directive to include the file where the implemetation in. the header.(I like this)
+
+
+### Namespaces
+	- When you have conflicts in names you can solve that by changing the names or declaring them in a namespace
+	namespace name {
+		...
+	}
+	and then do name:: or (very undesirable) using namespace name, using namespace name::node;
+
