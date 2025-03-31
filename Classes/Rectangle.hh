@@ -2,11 +2,13 @@
 
 class Rectangle
 {
-	private:
-		int	length;
-		int	width;
-	public:
-		int		area();
-		Rectangle(int length, int width);
-		~Rectangle();
+private:
+	int	length;
+	int	width;
+public:
+	int		area();
+	Rectangle(int length, int width);
+	~Rectangle();
+
+	Rectangle operator +(const Rectangle &rect);
 };
