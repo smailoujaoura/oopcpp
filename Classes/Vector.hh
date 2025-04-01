@@ -16,6 +16,6 @@ public:
 	~c_vector();
 	void		add(T2 value);
 	s_node<T2>	*getRoot();
-private:
+protected: // changed from private to protected to be able to inherit from it in Stack
 	s_node<T2>	*root = nullptr;
 };

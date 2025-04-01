@@ -46,3 +46,23 @@ These two are used to instantiate the needed types in the case of the templated 
 	}
 	and then do name:: or (very undesirable) using namespace name, using namespace name::node;
 
+## Inheritence
+### Inheritence
+	- The private attributes of a base class cannnot be inherited into a derived class
+	- class Derived: public Base
+		- The public means that those public attributes in the base class will remain public in the derived one
+	- if some attributes are "protected", that means that those attributes or properties can be accessed from the base class as well as the derived class(the one that inherits them) but cannot be accessed from the instances(objects) of those classes
+	- public: can be accessed anywhere in the scope, class, instance, etc...
+	- private: can be accessed from inside the class or its properties
+	- protected: can be accessed from the child and parent but NOT from the instance
+### Inheriting as:
+	- public: they come as is. if they were protected, they stay protected; were public, stay public, and ofc cannot inherit private as those properties are inaccessible outside the class or its...
+	- protected: a bit different, if were public, they become protected, if already protected in the base class, they ofc stay 
+		- Public inheritance: Public members stay public, and protected members stay protected.
+		- Protected inheritance: Public members become protected, and protected members stay protected. 
+		- Private inheritance: Public and protected members both become private.
+
+	- When a derived class is initialized it first calls the parent constructor and then it's constructor.
+	- When you don't have a default constructor in the base class you might have a compile issue as the compiler does not know which constructor to call, so to remedy this you need, in the derived class, to set which constructor is needed to be called in the base.
+	- You can ofc have multiple constructors, default, parametrized, copy, etc...
+	- The constructor that does not have any params is the default 
