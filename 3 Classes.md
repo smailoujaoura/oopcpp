@@ -66,3 +66,17 @@ These two are used to instantiate the needed types in the case of the templated 
 	- When you don't have a default constructor in the base class you might have a compile issue as the compiler does not know which constructor to call, so to remedy this you need, in the derived class, to set which constructor is needed to be called in the base.
 	- You can ofc have multiple constructors, default, parametrized, copy, etc...
 	- The constructor that does not have any params is the default 
+
+## Design Patterns and Enums in C++
+### Design Patterns:
+	- It is not a good idea to load into memory the data(classes) that you are not going to use immediately.
+	- Design Patterns are go-to solutions to well typical problems. 
+		- For example, for the problem of memory problem above, the design pattern that solves it is "factor"
+		- Tutorialspoint on design patterns
+### Enums
+	- Enums in C++ are of two types:
+		- Unscoped enums, created with 'enum'
+			- the values are implicityly convertible to int
+		- Scoped enums, created with 'enum class, enum struct'
+			- there is no implicit conversion to int. strongly typed.
+			- exact enum enforced by compiler
