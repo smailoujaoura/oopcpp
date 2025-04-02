@@ -18,7 +18,7 @@ typedef long long LONG;
 #define SHIFT 32
 #endif
 
-// elif, ifndef, 
+// elif, ifndef, undef, include, define, are these the only preprocessor directives you know? what a shame
 #ifndef __cplusplus
 	#error A C++ compiler is required!
 #endif
