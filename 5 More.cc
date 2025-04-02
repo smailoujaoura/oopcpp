@@ -43,5 +43,5 @@ int main()
 	std::cout << MAX << std::endl;
 	std::cout << GREATER(10, 20) << std::endl;
 	std::cout << shift(1) << std::endl;
-
+// #line 46 __LINE__ "define long x"
 }

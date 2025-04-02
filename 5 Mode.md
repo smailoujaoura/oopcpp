@@ -1,4 +1,4 @@
-## Compilation, Preprocessor directives, Smart pointer, Files
+## Compilation, Preprocessor directives
 ### Compilation
 	- refer to image 002
 	- The Preprocessor processes the files and adds stuff and removes stuff and changes stuff
