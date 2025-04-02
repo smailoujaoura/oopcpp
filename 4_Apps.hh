@@ -28,7 +28,7 @@ namespace ds
 			void		addBack(T value);
 			Node_d<T>	*getFirst();
 			Node_d<T>	*getLast();
-		private:
+		protected:
 			Node_d<T>	*front = nullptr;
 			Node_d<T>	*last = nullptr;
 	};
