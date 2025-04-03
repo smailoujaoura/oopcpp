@@ -6,6 +6,7 @@
 	
 ### Things that need (more) study
 	- why did we declare function to return vector and not a pointer to a vector...?
+		- For your final concern about returning stack variables: the vector lines is indeed created on the stack inside the function, but when returning it, C++ creates a copy or (more likely with modern compilers) uses move semantics to efficiently transfer the data to the caller's context without doing a deep copy of all the strings.
 	- how does auto work and why need for *
 	- how does std::cin >> std::ws and its difference from ign(streamsize.max())
 
