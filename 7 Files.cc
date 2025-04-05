@@ -10,6 +10,12 @@
 // #include <exception>
 
 enum Options{add=1, view=2};
+typedef struct
+{
+	std::string name;
+	double		salary;
+	std::string	position;
+}	Employee;
 
 void	addToFile(std::string text, std::string filePath)
 {
@@ -27,7 +33,41 @@ void	addToFile(std::string text, std::string filePath)
 	}
 }
 
-std::vector<std::string>	readFromTextFile(std::string filePath)
+void	addtoBin(Employee employee, std::string filePath)
+{
+	std::string	line;
+	while (true)
+	{
+		std::cout << "1-Add\n2-View\n3-Exit\nEnter Option: ";
+		int	options = 0;
+		std::cin >> options;
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		if (options == Options::add) {
+			// std::cin >> std::ws;
+			std::cout << "Enter text: ";
+			// std::cin >> line;
+			// std::cout << "Enter text: ";
+			getline(std::cin, line);
+			addToFile(line, "files/1.txt");
+		} else if (options == Options::view) {
+			std::cout << "========= Content ========\n";
+			std::vector/*<std::string> inferred by the compiler fro mthe return type of the function*/ lines = readFromTextFile("files/1.txt");// how does this work given we declared the object in the stack and returning it from the stack of that function????
+			for (auto line = lines.begin(); line != lines.end(); line++)// this is basically an iterator: begin with the first element in the vector and go all the way until the last
+			{
+				std::cout << *line << std::endl; // we derefrence because(ask library designers), because 'auto' keyword?? 
+			}
+		} else {
+			break;
+		}
+	}
+}
+
+std::vector<Employee*>	/***/readBinFile(std::string filePath)
+{
+
+}
+
+std::vector<std::string>	readFromTxtFile(std::string filePath)
 {
 	std::vector<std::string>	lines;
 	std::ifstream				file(filePath); // can do this as well
@@ -61,7 +101,7 @@ std::vector<std::string>	readFromTextFile(std::string filePath)
 	return (lines);
 }
 
-void	addToRecord()
+void	addToText()
 {
 	std::string	line;
 	while (true)
@@ -102,5 +142,5 @@ int main()
 	// }
 	// file << "one two";
 	// file.close();
-	addToRecord();
+	addToTxt();
 }
